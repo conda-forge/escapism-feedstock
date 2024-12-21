@@ -5,20 +5,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/e/escapism/escapism-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/e/escapism/escapism-{{ version }}.tar.gz
   sha256: 73256bdfb4f22230f0428fc6efecee61cdc4fad531b6f98b849cb9c80711e4ec
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python
+    - python {{ python_min }}
   run:
-    - python
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -27,6 +27,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/minrk/escapism
