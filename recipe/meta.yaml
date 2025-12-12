@@ -1,4 +1,4 @@
-{% set version = "1.0.1" %}
+{% set version = "1.1.0" %}
 
 package:
   name: escapism
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/e/escapism/escapism-{{ version }}.tar.gz
-  sha256: 73256bdfb4f22230f0428fc6efecee61cdc4fad531b6f98b849cb9c80711e4ec
+  sha256: add130e48a85bb1aaea3e74fb031f5033c7055aedb39a3265f923d5f40c3f974
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
